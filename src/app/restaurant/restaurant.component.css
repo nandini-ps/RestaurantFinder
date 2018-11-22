@@ -1,0 +1,17 @@
+.card {
+    background-color: rgb(185, 176, 176);
+    border-radius: 10px;
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-right:50px;
+}
+.cardwhole {
+    background-color: rgba(185, 176, 176, 0.021);
+    display: inline-block;    
+    margin-left: 17%;
+    border: 1px solid grey;
+
+}

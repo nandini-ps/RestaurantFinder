@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2 cardwhole">
+        <h3>Showing restaurants in <strong>"{{location}}"</strong></h3>
+        <table class="table table-condensed">
+            <tr *ngFor="let res of restaurants" type="none">
+              <td>
+                <span class="card"></span>
+              </td>
+               <td> 
+                <span>{{res.restaurant.name}}</span><br>
+                <span class="glyphicon glyphicon-star">{{rating}}<small>({{res.restaurant.user_rating.votes}} votes)</small></span>
+                | <span>{{review_count}} Reviews</span>
+                
+              </td>
+            </tr>
+            
+          </table>
+    </div>
+    
+</div>
