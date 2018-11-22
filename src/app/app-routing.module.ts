@@ -4,7 +4,7 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 import { CityComponent } from './city/city.component';
 
 export const routes: Routes = [
-  {path:'city', component:CityComponent},
+  {path: 'city', component: CityComponent},
   { path: 'city/:location', component: RestaurantComponent }
 ];
 

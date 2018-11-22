@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import { RestaurantService } from '../restaurant.service';
 import { Review } from '../review';
+import { RestaurantService } from '../restaurant.service';
+
 
 @Component({
   selector: 'app-restaurant',
@@ -30,22 +31,21 @@ export class RestaurantComponent implements OnInit {
     this.restaurantService.getRestaurants(city)
       .subscribe(response => {
         this.restaurants = response.restaurants;
-        this.res_name;
-        for (let res of this.restaurants) {
-          this.resid = res.restaurant.R["res_id"]
+        for (const res of this.restaurants) {
+          this.resid = res.restaurant.R['res_id'];
         }
         this.restaurantService.getRatings(this.resid).subscribe(
-          response => {
-          this.review = response;
+          res => {
+          this.review = res;
             this.review_count = this.review.reviews_count;
             this.user_reviews = this.review.user_reviews;
-            for (let rev of this.user_reviews) {
-              this.rating = rev["review"].rating;
+            for (const rev of this.user_reviews) {
+              this.rating = rev['review'].rating;
             }
           });
       }, error => {
-        return Promise.reject(error.json() || error)
-      })
+        return Promise.reject(error.json() || error);
+      });
   }
 
 
